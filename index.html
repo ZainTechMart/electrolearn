@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="Learn electronics, explore components, design PCB layouts and build virtual circuits with Urdu guides.">
+  <title>ElectroLearn — Learn, Build, Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ElectroLearn home"><span class="brand-mark">⌘</span><span><b>Electro<span>Learn</span></b><small>Learn · Build · Experiment</small></span></a>
+    <div class="search-wrap"><input id="globalSearch" type="search" placeholder="Search components, circuits or PCB…" aria-label="Search"><button id="searchBtn" class="icon-button" aria-label="Search">⌕</button></div>
+    <div class="top-actions"><button id="langToggle" class="button ghost">اردو</button><a class="button primary" href="#lab">Open Simulator ↗</a></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-link active" href="#home" data-page="home">⌂ <span>Home</span></a>
+      <a class="nav-link" href="#components" data-page="components">▦ <span>Components & Devices</span></a>
+      <a class="nav-link" href="#circuits" data-page="circuits">⌁ <span>Circuits & Diagrams</span></a>
+      <a class="nav-link" href="#pcb" data-page="pcb">▧ <span>PCB Library</span></a>
+      <a class="nav-link" href="#lab" data-page="lab">⚡ <span>Simulator / Lab</span></a>
+      <a class="nav-link" href="#professional" data-page="professional">∿ <span>Professional Tools</span></a>
+      <a class="nav-link" href="#pcbDesigner" data-page="pcbDesigner">▧ <span>PCB Designer</span></a>
+      <a class="nav-link" href="#experiments" data-page="experiments">⚗ <span>Experiments</span></a>
+      <a class="nav-link" href="#tutorials" data-page="tutorials">▤ <span>Tutorials</span></a>
+      <div class="sidebar-note"><b>Virtual Lab</b><p>Test ideas safely before building real circuits.</p><span class="status-dot"></span> Simulation engine ready</div>
+    </aside>
+    <main id="mainContent">
+      <section id="home" class="hero section-block">
+        <div class="hero-copy"><div class="eyebrow">YOUR ELECTRONICS WORKBENCH</div><h1>Electronics made <span>understandable.</span></h1><p>Explore components, learn in Urdu, build circuits and experiment in a virtual lab.</p><div class="hero-actions"><a class="button primary" href="#lab">Start building →</a><a class="button ghost light" href="#components">Explore components</a></div><div class="hero-stats"><span><b>18+</b> categories</span><span><b>Urdu</b> learning guides</span><span><b>Safe</b> virtual tests</span></div></div>
+        <div class="hero-art" aria-label="Illustration of a printed circuit board"><div class="chip chip-big">IC<br><small>555</small></div><div class="led led-red"></div><div class="led led-green"></div><div class="trace trace-a"></div><div class="trace trace-b"></div><div class="resistor"><i></i><i></i><i></i></div><div class="hero-caption">IDEAS → CIRCUITS → DISCOVERY</div></div>
+      </section>
+      <section class="section-block" aria-labelledby="quickTitle"><div class="section-heading"><div><div class="eyebrow">CHOOSE YOUR NEXT STEP</div><h2 id="quickTitle">Your electronics workspace</h2></div></div>
+        <div class="feature-grid">
+          <a class="feature-card" href="#components"><span class="feature-icon teal">▦</span><h3>Components & Devices</h3><p>Learn what each part does and how to use it.</p><span class="card-link">Browse library →</span></a>
+          <a class="feature-card" href="#circuits"><span class="feature-icon blue">⌁</span><h3>Circuit diagrams</h3><p>Study example schematics and parts lists.</p><span class="card-link">Explore circuits →</span></a>
+          <a class="feature-card" href="#pcb"><span class="feature-icon green">▧</span><h3>PCB library</h3><p>Compare blank boards and prototype layouts.</p><span class="card-link">View boards →</span></a>
+          <a class="feature-card" href="#lab"><span class="feature-icon purple">⚡</span><h3>Interactive lab</h3><p>Add parts, connect pins and test a circuit.</p><span class="card-link">Open simulator →</span></a>
+        </div>
+      </section>
+      <section id="components" class="section-block"><div class="section-heading"><div><div class="eyebrow">LEARN THE BUILDING BLOCKS</div><h2>Components & devices</h2><p class="section-subtitle">Choose a component to see its purpose, common values and Urdu explanation.</p></div><input id="componentSearch" class="compact-search" placeholder="Filter components…" aria-label="Filter components"></div><div id="componentGrid" class="component-grid"></div><div id="componentDetail" class="detail-panel hidden" aria-live="polite"></div></section>
+      <section id="circuits" class="section-block"><div class="section-heading"><div><div class="eyebrow">LEARN BY EXAMPLE</div><h2>Popular circuits & diagrams</h2></div></div><div id="circuitGrid" class="circuit-grid"></div></section>
+      <section id="pcb" class="section-block"><div class="section-heading"><div><div class="eyebrow">PLAN YOUR BUILD</div><h2>Empty PCB library</h2><p class="section-subtitle">Browse common board styles before designing your own.</p></div><select id="pcbFilter" class="compact-select" aria-label="Filter PCB types"><option value="all">All board types</option><option value="prototype">Prototype boards</option><option value="manufactured">Manufactured PCBs</option><option value="special">Special-purpose</option></select></div><div id="pcbGrid" class="pcb-grid"></div></section>
+      <section id="lab" class="section-block lab-section"><div class="section-heading"><div><div class="eyebrow">BUILD · CONNECT · TEST</div><h2>Interactive circuit simulator</h2><p class="section-subtitle">Add components and connect their pins. This starter simulator checks simple DC paths and common wiring faults.</p></div><span class="pill"><span class="status-dot"></span> Browser-based</span></div>
+        <div class="lab-layout"><div class="parts-panel"><h3>Component tray</h3><p class="muted small">Select a part to add it to the workbench.</p><div id="partTray" class="part-tray"></div><div class="divider"></div><h3>Connection guide</h3><ol class="guide-list"><li>Add a battery, resistor and LED.</li><li>Tap a pin dot on one part.</li><li>Tap a pin dot on another part to connect them.</li><li>Repeat to create a path, then press Run test.</li></ol><button id="loadExample" class="button secondary full">Load LED example</button><button id="clearCircuit" class="button ghost full">Clear workbench</button></div>
+          <div class="workbench-wrap"><div class="workbench-toolbar"><div><b>Untitled circuit</b><small id="connectionCount">0 connections</small></div><div class="toolbar-actions"><button id="undoConnection" class="button ghost small-button">Undo wire</button><button id="runSimulation" class="button primary small-button">▶ Run test</button></div></div><div id="workbench" class="workbench" aria-label="Circuit workbench"><div class="empty-state" id="emptyState"><div class="empty-symbol">＋</div><b>Your circuit starts here</b><p>Add parts from the tray, then connect the pin dots.</p></div><svg id="wireLayer" class="wire-layer" aria-label="Circuit wires"></svg><div id="placedParts" class="placed-parts"></div></div><div id="simulationResult" class="simulation-result neutral" aria-live="polite"><span class="result-icon">i</span><div><b>Ready to test</b><p>Add components and connect the pins. Results are educational estimates, not hardware guarantees.</p></div></div></div></div>
+      </section>
+      <section id="professional" class="section-block pro-section">
+        <div class="section-heading"><div><div class="eyebrow">PRO WORKFLOW</div><h2>Professional simulation & exports</h2><p class="section-subtitle">Export a SPICE-style netlist from the current workbench, save your project, or open a dedicated circuit engine for deeper analysis.</p></div><span class="pill">Advanced tools</span></div>
+        <div class="pro-grid">
+          <article class="pro-card"><div class="pro-card-icon">∿</div><h3>SPICE netlist export</h3><p>Generate an editable netlist for supported basic parts. Review the generated text before using it in a compatible SPICE engine.</p><div class="pro-actions"><button id="exportNetlist" class="button primary">Export .cir netlist</button><button id="showNetlist" class="button secondary">Preview netlist</button></div></article>
+          <article class="pro-card"><div class="pro-card-icon">↗</div><h3>External circuit simulator</h3><p>Open CircuitJS/Falstad for interactive circuit experiments. It runs separately; this site does not automatically sync your workbench into it.</p><div class="pro-actions"><a class="button primary" href="https://www.falstad.com/circuit/" target="_blank" rel="noopener noreferrer">Open CircuitJS ↗</a><a class="button ghost" href="https://ngspice.sourceforge.io/" target="_blank" rel="noopener noreferrer">About ngspice ↗</a></div></article>
+          <article class="pro-card"><div class="pro-card-icon">▧</div><h3>Project file</h3><p>Save the current workbench parts and connections as JSON, then import the project later on this device.</p><div class="pro-actions"><button id="saveProject" class="button secondary">Save project JSON</button><label class="button ghost file-button">Import JSON<input id="importProject" type="file" accept="application/json,.json" hidden></label></div></article>
+        </div>
+        <div id="netlistPreview" class="detail-panel hidden"><div class="preview-head"><h3>SPICE netlist preview</h3><button id="copyNetlist" class="button ghost small-button">Copy text</button></div><pre id="netlistText" class="netlist-text"></pre><p class="muted small">Netlist export is a starting point, not a verified simulation result. Models and pin ordering must be checked against the real device datasheets and target SPICE engine.</p></div>
+      </section>
+      <section id="pcbDesigner" class="section-block">
+        <div class="section-heading"><div><div class="eyebrow">DESIGN YOUR BOARD</div><h2>PCB layout sandbox</h2><p class="section-subtitle">Create a simple visual board with pads and traces, then export an SVG preview. This is not production-ready Gerber/DRC output.</p></div></div>
+        <div class="pcb-designer-layout"><div class="parts-panel pcb-tools"><h3>Board tools</h3><label class="field-label" for="boardShape">Board shape</label><select id="boardShape" class="compact-select"><option value="rect">Rectangle</option><option value="round">Rounded rectangle</option><option value="circle">Circle</option></select><label class="field-label" for="boardSize">Board size</label><select id="boardSize" class="compact-select"><option value="small">50 × 35 mm</option><option value="medium" selected>80 × 50 mm</option><option value="large">100 × 70 mm</option></select><button id="addPad" class="button secondary full">＋ Add pad</button><button id="addTrace" class="button secondary full">＋ Add trace</button><button id="clearBoard" class="button ghost full">Clear board</button><button id="exportBoard" class="button primary full">Export SVG</button><p class="muted small">Click board to place pads. Click two points after choosing “Add trace” to draw a visual copper trace.</p></div><div class="pcb-canvas-wrap"><div class="pcb-canvas-toolbar"><b>PCB preview</b><span id="boardStatus" class="muted small">80 × 50 mm · 0 pads</span></div><svg id="pcbCanvas" class="pcb-canvas" viewBox="0 0 800 500" role="img" aria-label="Interactive PCB layout preview"></svg></div></div>
+      </section>
+      <section id="experiments" class="section-block"><div class="section-heading"><div><div class="eyebrow">SAFE TROUBLESHOOTING</div><h2>Experiments & fault finding</h2></div></div><div class="experiment-grid"><article class="experiment-card"><span class="experiment-icon red">⚠</span><h3>Short circuit</h3><p>Learn why connecting power rails directly can cause excessive current.</p><button class="text-button" data-experiment="short">View what happens →</button></article><article class="experiment-card"><span class="experiment-icon amber">⌁</span><h3>Open connection</h3><p>See how a broken wire stops current from flowing around a circuit.</p><button class="text-button" data-experiment="open">View what happens →</button></article><article class="experiment-card"><span class="experiment-icon blue">↯</span><h3>LED polarity</h3><p>Understand anode and cathode, and why polarity matters.</p><button class="text-button" data-experiment="polarity">View what happens →</button></article><article class="experiment-card"><span class="experiment-icon purple">♨</span><h3>Overcurrent</h3><p>Estimate why a current-limiting resistor is needed with an LED.</p><button class="text-button" data-experiment="overcurrent">View what happens →</button></article></div><div id="experimentDetail" class="detail-panel hidden"></div></section>
+      <section id="tutorials" class="section-block"><div class="section-heading"><div><div class="eyebrow">START WITH THE BASICS</div><h2>Learning path</h2></div></div><div class="learning-list"><article><span class="lesson-number">01</span><div><h3>Voltage, current and resistance</h3><p>Understand the three basics behind most beginner circuits.</p><small>Urdu guide · Beginner</small></div><span class="lesson-tag">Start here</span></article><article><span class="lesson-number">02</span><div><h3>Read resistor values</h3><p>Learn resistance, tolerance and the colour bands.</p><small>Urdu guide · Beginner</small></div><span class="lesson-tag">10 min</span></article><article><span class="lesson-number">03</span><div><h3>Build an LED circuit</h3><p>Connect a battery, resistor and LED safely.</p><small>Practical · Beginner</small></div><button class="button secondary small-button" id="tutorialLoad">Try it</button></article></div></section>
+      <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">⌘</span><span><b>Electro<span>Learn</span></b><small>Learn · Build · Experiment</small></span></a><p>Learn electronics. Test ideas. Build with confidence.</p><span>Static GitHub Pages starter · No account required</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
